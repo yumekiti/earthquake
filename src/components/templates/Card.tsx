@@ -14,7 +14,7 @@ const Component: FC<Props> = ({ children, time }) => {
     const formattedTime = new Date(time);
     const diff = (now.getTime() - formattedTime.getTime()) / 1000 / 60;
     setWithinTime(diff);
-  }, []);
+  }, [time]);
 
   return (
     <div
