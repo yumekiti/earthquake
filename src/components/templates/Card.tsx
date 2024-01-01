@@ -16,22 +16,22 @@ const Component: FC<Props> = ({ children, time }) => {
     setWithinTime(diff);
   }, [time]);
 
-  let backgroundClass = "gray";
-
-  if (withinTime == 0) {
-    backgroundClass = "gray";
-  } else if (withinTime <= 10) {
-    backgroundClass = "red";
-  } else if (withinTime <= 30) {
-    backgroundClass = "yellow";
-  } else if (withinTime <= 60) {
-    backgroundClass = "blue";
-  } else {
-    backgroundClass = "gray";
-  }
-
   return (
-    <div className={`h-full rounded-lg px-12 py-2 shadow-md border overflow-y-scroll ${backgroundClass}`}>
+    <div
+      className='h-full rounded-lg px-12 py-2 shadow-md border overflow-y-scroll'
+      style={{
+        backgroundColor:
+          withinTime == 0
+            ? "#F3F4F6"
+            : withinTime <= 10
+              ? "#FEE2E2"
+              : withinTime <= 30
+                ? "#FEF9C3"
+                : withinTime <= 60
+                  ? "#DBEAFE"
+                  : "#F3F4F6"
+      }}
+    >
       {children}
     </div>
   );
