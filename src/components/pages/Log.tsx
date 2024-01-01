@@ -2,6 +2,7 @@ import { useState } from 'react'
 import useSWR from 'swr';
 import { codeData } from '../../constants/code';
 import EarthquakeInfo from '../organisms/EarthquakeInfo';
+import TsunamiForecast from '../organisms/TsunamiForecast';
 
 const Component = () => {
   const [codes, setCodes] = useState<string>('')
@@ -43,6 +44,8 @@ const Component = () => {
           <div key={body.id}>
             {body.code === 551 ? (
               <EarthquakeInfo body={body} />
+            ) : body.code === 552 ? (
+              <TsunamiForecast body={body} />
             ) : (
               <li>{JSON.stringify(body)}</li>
             )}

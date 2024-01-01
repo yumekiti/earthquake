@@ -43,7 +43,7 @@ const Component: FC<Props> = ({ body }) => {
           <li>訂正の有無：{body.issue.correct}</li>
         </ul>
       </li>
-{/* 
+
       <details><summary>震度観測点の情報</summary>
         {
           body.points.map((point: any, index: number) => (
@@ -55,7 +55,7 @@ const Component: FC<Props> = ({ body }) => {
             </ul>
           ))
         }
-      </details> */}
+      </details>
 
       <li>
         タイムスタンプ
