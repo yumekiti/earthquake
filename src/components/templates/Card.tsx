@@ -21,14 +21,14 @@ const Component: FC<Props> = ({ children, time }) => {
       className={`h-full rounded-lg px-12 py-2 shadow-md bg-white border overflow-y-scroll
       ${
         withinTime == 0
-          ? "border-gray-200"
+          ? "bg-white"
           : withinTime <= 10
-            ? "border-red-500"
+            ? "bg-red-100"
             : withinTime <= 30
-              ? "border-yellow-500"
+              ? "bg-yellow-100"
               : withinTime <= 60
-                ? "border-blue-500"
-                : "border-gray-200"
+                ? "bg-blue-100"
+                : "bg-gray-100"
       }
     `}
     >

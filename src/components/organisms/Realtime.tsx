@@ -32,15 +32,15 @@ const Component: FC<Props> = ({ codes, isShowDetail }) => {
 
   return bodys
     .filter((body: any) => (codes ? body.code === Number(codes) : true))
-    .map((body: any, index: number) => (
+    .map((body: any) => (
       <>
         {body.code === 551 ? (
-          <EarthquakeInfo key={index} body={body} />
+          <EarthquakeInfo key={body.id} body={body} />
         ) : body.code === 552 ? (
-          <TsunamiForecast key={index} body={body} />
+          <TsunamiForecast key={body.id} body={body} />
         ) : (
           isShowDetail && (
-            <Card key={index}>
+            <Card key={body.id}>
               <li>{JSON.stringify(body)}</li>
             </Card>
           )
