@@ -21,11 +21,11 @@ const Component = () => {
 
   const handleLimitChange = (e: any) => {
     setLimit(e.target.value);
-  }
+  };
 
   const handleOffsetChange = (e: any) => {
     setOffset(e.target.value);
-  }
+  };
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
