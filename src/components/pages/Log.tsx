@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import useSWR from 'swr';
-import { codesData } from '../constants/codes';
+import { codeData } from '../../constants/code';
+import EarthquakeInfo from '../organisms/EarthquakeInfo';
 
 const Component = () => {
   const [codes, setCodes] = useState<string>('')
@@ -11,6 +12,8 @@ const Component = () => {
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
 
+  console.log(data)
+
   return (
     <>
       <h1>Earthquake API</h1>
@@ -18,8 +21,8 @@ const Component = () => {
         value={codes}
         onChange={(e) => setCodes(e.target.value)}
       >
-        {codesData.map(({value, label}) => (
-          <option key={value} value={value}>{label}</option>
+        {codeData.map(({value, label}, index) => (
+          <option key={index} value={value}>{label}</option>
         ))}
       </select>
       <input
@@ -36,8 +39,14 @@ const Component = () => {
         onChange={(e) => setOffset(e.target.value)}
       />
       <ul>
-        {data.map((item: any) => (
-          <li key={item.id}>{item.code}</li>
+        {data.map((body: any) => (
+          <div key={body.id}>
+            {body.code === 551 ? (
+              <EarthquakeInfo body={body} />
+            ) : (
+              <li>{JSON.stringify(body)}</li>
+            )}
+          </div>
         ))}
       </ul>
     </>

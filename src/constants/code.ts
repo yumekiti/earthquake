@@ -1,4 +1,4 @@
-export const codesData = [
+export const codeData = [
   { value: '', label: 'すべて' },
   { value: '551', label: '地震情報' },
   { value: '552', label: '津波予報' },

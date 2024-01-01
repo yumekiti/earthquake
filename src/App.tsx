@@ -1,6 +1,6 @@
-import Time from './components/Time'
-import Realtime from './components/Realtime'
-import Log from './components/Log'
+import Time from './components/pages/Time'
+import Realtime from './components/pages/Realtime'
+import Log from './components/pages/Log'
 
 function App() {
   return (
