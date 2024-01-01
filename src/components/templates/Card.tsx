@@ -16,21 +16,24 @@ const Component: FC<Props> = ({ children, time }) => {
     setWithinTime(diff);
   }, [time]);
 
+  let backgroundColor = "#F3F4F6";
+
+  if (withinTime == 0) {
+    backgroundColor = "#F3F4F6";
+  } else if (withinTime <= 10) {
+    backgroundColor = "#FEE2E2";
+  } else if (withinTime <= 30) {
+    backgroundColor = "#FEF9C3";
+  } else if (withinTime <= 60) {
+    backgroundColor = "#DBEAFE";
+  } else {
+    backgroundColor = "#F3F4F6";
+  }
+
   return (
     <div
       className='h-full rounded-lg px-12 py-2 shadow-md border overflow-y-scroll'
-      style={{
-        backgroundColor:
-          withinTime == 0
-            ? "#F3F4F6"
-            : withinTime <= 10
-              ? "#FEE2E2"
-              : withinTime <= 30
-                ? "#FEF9C3"
-                : withinTime <= 60
-                  ? "#DBEAFE"
-                  : "#F3F4F6"
-      }}
+      style={{ backgroundColor }}
     >
       {children}
     </div>
