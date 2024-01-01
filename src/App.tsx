@@ -13,10 +13,10 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="bg-slate">
       <Time />
       <Log />
-    </>
+    </div>
   );
 }
 

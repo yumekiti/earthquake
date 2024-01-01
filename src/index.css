@@ -4,34 +4,12 @@
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  background-color: rgb(241 245 249);
 }
 
 ul {
   padding-left: 1.5rem;
-  
 }
 
 li {
   list-style-type: disc;
-}
-
-.bg-white {
-  background-color: #fff;
-}
-
-.bg-red-100 {
-  background-color: rgb(254 226 226);
-}
-
-.bg-yellow-100 {
-  background-color: rgb(254 249 195);
-}
-
-.bg-blue-100 {
-  background-color: rgb(219 234 254);
-}
-
-.bg-gray-100 {
-  background-color: rgb(243 244 246);
 }
