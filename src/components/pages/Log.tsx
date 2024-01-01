@@ -13,20 +13,11 @@ const Component = () => {
   const [limit, setLimit] = useState<string>("10");
   const [offset, setOffset] = useState<string>("0");
   const [isShowDetail, setIsShowDetail] = useState<boolean>(false);
-  const { data, error, mutate } = useSWR(
+  const { data, error } = useSWR(
     `/v2/history?limit=${limit}&offset=${offset}${
       isShowDetail ? "" : "&codes=551&codes=552"
     }${isShowDetail && codes ? `&codes=${codes}` : ""}`,
   );
-  const [isUpdate, setIsUpdate] = useState<boolean>(false);
-
-  const handleUpdate = () => {
-    setIsUpdate(true);
-    mutate();
-    setTimeout(() => {
-      setIsUpdate(false);
-    }, 5000);
-  };
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
