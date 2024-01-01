@@ -19,6 +19,18 @@ const Component = () => {
     }${isShowDetail && codes ? `&codes=${codes}` : ""}`,
   );
 
+  const handleLimit = (e: any) => {
+    setTimeout(() => {
+      setLimit(e.target.value);
+    }, 1000);
+  };
+
+  const handleOffset = (e: any) => {
+    setTimeout(() => {
+      setOffset(e.target.value);
+    }, 1000);
+  };
+
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
@@ -34,7 +46,7 @@ const Component = () => {
               value={limit}
               min="1"
               max="100"
-              onChange={(e) => setLimit(e.target.value)}
+              onChange={handleLimit}
             />
           </div>
           <div className="flex items-center gap-2">
@@ -44,7 +56,7 @@ const Component = () => {
               className="w-16"
               value={offset}
               min="0"
-              onChange={(e) => setOffset(e.target.value)}
+              onChange={handleOffset}
             />
           </div>
         </div>
