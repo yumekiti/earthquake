@@ -70,18 +70,18 @@ const Component = () => {
       </div>
       <ul className="flex flex-col gap-2 p-2">
         <Realtime isShowDetail={isShowDetail} codes={codes} />
-        {data.map((body: any) => (
-          <div key={body.id}>
+        {data.map((body: any, index: number) => (
+          <>
             {body.code === 551 ? (
-              <EarthquakeInfo body={body} />
+              <EarthquakeInfo key={index} body={body} />
             ) : body.code === 552 ? (
-              <TsunamiForecast body={body} />
+              <TsunamiForecast key={index} body={body} />
             ) : (
-              <Card>
+              <Card key={index}>
                 <li>{JSON.stringify(body)}</li>
               </Card>
             )}
-          </div>
+          </>
         ))}
       </ul>
     </Layout>

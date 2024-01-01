@@ -33,19 +33,19 @@ const Component: FC<Props> = ({ codes, isShowDetail }) => {
   return bodys
     .filter((body: any) => (codes ? body.code === Number(codes) : true))
     .map((body: any, index: number) => (
-      <div key={index}>
+      <>
         {body.code === 551 ? (
-          <EarthquakeInfo body={body} />
+          <EarthquakeInfo key={index} body={body} />
         ) : body.code === 552 ? (
-          <TsunamiForecast body={body} />
+          <TsunamiForecast key={index} body={body} />
         ) : (
           isShowDetail && (
-            <Card>
+            <Card key={index}>
               <li>{JSON.stringify(body)}</li>
             </Card>
           )
         )}
-      </div>
+      </>
     ));
 };
 
