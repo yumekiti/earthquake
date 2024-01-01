@@ -15,8 +15,8 @@ const Component = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-2 p-4">
-        <h2>Time</h2>
+      <div className="flex flex-col items-center justify-center gap-2 p-4">
+        <h2>リアルタイム地震情報</h2>
         <p>{time.toLocaleString()}</p>
       </div>
     </>
