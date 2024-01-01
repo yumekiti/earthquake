@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
 
-import { SWRConfig } from 'swr';
-import { fetchInstance } from './utils/fetchInstance';
+import { SWRConfig } from "swr";
+import { fetchInstance } from "./utils/fetchInstance";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <SWRConfig
       value={{
@@ -19,4 +19,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <App />
     </SWRConfig>
   </React.StrictMode>,
-)
+);

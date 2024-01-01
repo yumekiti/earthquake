@@ -1,13 +1,13 @@
-import { FC } from "react"
+import { FC } from "react";
 
-import IssueInfo from '../molecules/IssueInfo';
-import EarthquakeInfo from '../molecules/EarthquakeInfo';
-import IntensityPointsInfo from '../molecules/IntensityPointsInfo';
-import Card from '../templates/Card';
+import IssueInfo from "../molecules/IssueInfo";
+import EarthquakeInfo from "../molecules/EarthquakeInfo";
+import IntensityPointsInfo from "../molecules/IntensityPointsInfo";
+import Card from "../templates/Card";
 
 type Props = {
-  body: any
-}
+  body: any;
+};
 
 const Component: FC<Props> = ({ body }) => {
   return (
@@ -17,7 +17,7 @@ const Component: FC<Props> = ({ body }) => {
       <IssueInfo body={body} />
       <IntensityPointsInfo body={body} />
     </Card>
-  )
-}
+  );
+};
 
-export default Component
+export default Component;

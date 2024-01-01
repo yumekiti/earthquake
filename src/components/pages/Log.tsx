@@ -1,31 +1,35 @@
-import {  useState } from 'react'
-import useSWR from 'swr';
+import { useState } from "react";
+import useSWR from "swr";
 
-import { codeData } from '../../constants/code';
-import EarthquakeInfo from '../organisms/EarthquakeInfo';
-import TsunamiForecast from '../organisms/TsunamiForecast';
-import Realtime from '../organisms/Realtime';
-import Layout from '../templates/Layout';
-import Card from '../templates/Card';
+import { codeData } from "../../constants/code";
+import EarthquakeInfo from "../organisms/EarthquakeInfo";
+import TsunamiForecast from "../organisms/TsunamiForecast";
+import Realtime from "../organisms/Realtime";
+import Layout from "../templates/Layout";
+import Card from "../templates/Card";
 
 const Component = () => {
-  const [codes, setCodes] = useState<string>('')
-  const [limit, setLimit] = useState<string>('10')
-  const [offset, setOffset] = useState<string>('0')
-  const [isShowDetail, setIsShowDetail] = useState<boolean>(false)  
-  const {data, error, mutate} = useSWR(`/v2/history?limit=${limit}&offset=${offset}${isShowDetail ? '' : '&codes=551&codes=552'}${isShowDetail && codes ? `&codes=${codes}` : ''}`)
-  const [isUpdate, setIsUpdate] = useState<boolean>(false)
+  const [codes, setCodes] = useState<string>("");
+  const [limit, setLimit] = useState<string>("10");
+  const [offset, setOffset] = useState<string>("0");
+  const [isShowDetail, setIsShowDetail] = useState<boolean>(false);
+  const { data, error, mutate } = useSWR(
+    `/v2/history?limit=${limit}&offset=${offset}${
+      isShowDetail ? "" : "&codes=551&codes=552"
+    }${isShowDetail && codes ? `&codes=${codes}` : ""}`,
+  );
+  const [isUpdate, setIsUpdate] = useState<boolean>(false);
 
   const handleUpdate = () => {
-    setIsUpdate(true)
-    mutate()
+    setIsUpdate(true);
+    mutate();
     setTimeout(() => {
-      setIsUpdate(false)
-    }, 5000)
-  }
+      setIsUpdate(false);
+    }, 5000);
+  };
 
-  if (error) return <div>failed to load</div>
-  if (!data) return <div>loading...</div>
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
 
   return (
     <Layout>
@@ -35,7 +39,7 @@ const Component = () => {
             <label>取得数</label>
             <input
               type="number"
-              className='w-16'
+              className="w-16"
               value={limit}
               min="1"
               max="100"
@@ -46,7 +50,7 @@ const Component = () => {
             <label>取得位置</label>
             <input
               type="number"
-              className='w-16'
+              className="w-16"
               value={offset}
               min="0"
               onChange={(e) => setOffset(e.target.value)}
@@ -62,16 +66,15 @@ const Component = () => {
               onChange={() => setIsShowDetail(!isShowDetail)}
             />
           </div>
-          {isShowDetail &&
-            <select
-              value={codes}
-              onChange={(e) => setCodes(e.target.value)}
-            >
-              {codeData.map(({value, label}, index) => (
-                <option key={index} value={value}>{label}</option>
+          {isShowDetail && (
+            <select value={codes} onChange={(e) => setCodes(e.target.value)}>
+              {codeData.map(({ value, label }, index) => (
+                <option key={index} value={value}>
+                  {label}
+                </option>
               ))}
             </select>
-          }
+          )}
         </div>
       </div>
       <ul className="flex flex-col gap-2 p-2">
@@ -91,7 +94,7 @@ const Component = () => {
         ))}
       </ul>
     </Layout>
-  )
-}
+  );
+};
 
-export default Component
+export default Component;

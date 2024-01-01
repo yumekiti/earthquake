@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 const Component = () => {
-  const [time, setTime] = useState<Date>(new Date())
-  
+  const [time, setTime] = useState<Date>(new Date());
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(new Date())
-    }, 1000)
+      setTime(new Date());
+    }, 1000);
 
     return () => {
-      clearInterval(interval)
-    }
-  }, [])
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <>
@@ -20,7 +20,7 @@ const Component = () => {
         <p>{time.toLocaleString()}</p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Component
+export default Component;
