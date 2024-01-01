@@ -11,7 +11,7 @@ const Component: FC<Props> = ({ body }) => {
     <details><summary>震度観測点の情報</summary>
       {
         body.points.map((point: any, index: number) => (
-          <ul key={index}>
+          <ul key={index} className="list-disc">
             <li>震度観測点名称：{point.addr}</li>
             <li>区域名かどうか：{point.isArea ? 'はい' : 'いいえ'}</li>
             <li>都道府県：{point.pref}</li>

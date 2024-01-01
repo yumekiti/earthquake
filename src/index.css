@@ -1,3 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+ul {
+  padding-left: 1.5rem;
+  
+}
+
+li {
+  list-style-type: disc;
 }

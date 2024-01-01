@@ -15,8 +15,10 @@ const Component = () => {
 
   return (
     <>
-      <h1>Time</h1>
-      <p>{time.toLocaleString()}</p>
+      <div className="flex items-center justify-center gap-2 p-4">
+        <h2>Time</h2>
+        <p>{time.toLocaleString()}</p>
+      </div>
     </>
   )
 }

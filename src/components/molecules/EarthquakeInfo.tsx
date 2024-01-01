@@ -10,13 +10,13 @@ type Props = {
 
 const Component: FC<Props> = ({ body }) => {
   return (
-    <li>
+    <li className="mb-4">
       地震情報
-      <ul>
+      <ul className="list-disc">
         <li>発生日時：{body.earthquake.time}</li>
         <li>
           震源情報
-          <ul>
+          <ul className="list-disc">
             <li>名称：{body.earthquake.hypocenter.name}</li>
             <li>緯度：{body.earthquake.hypocenter.latitude == -200 ? '震源情報が存在しない' : body.earthquake.hypocenter.latitude}</li>
             <li>経度：{body.earthquake.hypocenter.longitude == -200 ? '震源情報が存在しない' : body.earthquake.hypocenter.longitude}</li>
