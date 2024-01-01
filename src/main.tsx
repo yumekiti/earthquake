@@ -10,6 +10,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <SWRConfig
       value={{
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
         fetcher: (resource, init) =>
           fetchInstance()
             .get(resource, init)

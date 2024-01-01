@@ -14,6 +14,7 @@ function App() {
 
   return (
     <div className="bg-slate">
+      <h2>リアルタイム地震情報</h2>
       <Time />
       <Log />
     </div>
