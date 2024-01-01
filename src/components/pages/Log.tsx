@@ -19,17 +19,13 @@ const Component = () => {
     }${isShowDetail && codes ? `&codes=${codes}` : ""}`,
   );
 
-  const handleLimit = (e: any) => {
-    setTimeout(() => {
-      setLimit(e.target.value);
-    }, 1000);
-  };
+  const handleLimitChange = (e: any) => {
+    setLimit(e.target.value);
+  }
 
-  const handleOffset = (e: any) => {
-    setTimeout(() => {
-      setOffset(e.target.value);
-    }, 1000);
-  };
+  const handleOffsetChange = (e: any) => {
+    setOffset(e.target.value);
+  }
 
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
@@ -40,24 +36,22 @@ const Component = () => {
         <div className="w-full flex justify-around items-center">
           <div className="flex items-center gap-2">
             <label>取得数</label>
-            <input
-              type="number"
-              className="w-16"
-              value={limit}
-              min="1"
-              max="100"
-              onChange={handleLimit}
-            />
+            <select value={limit} onChange={handleLimitChange}>
+              <option value="10">10</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
           </div>
           <div className="flex items-center gap-2">
             <label>取得位置</label>
-            <input
-              type="number"
-              className="w-16"
-              value={offset}
-              min="0"
-              onChange={handleOffset}
-            />
+            <select value={offset} onChange={handleOffsetChange}>
+              <option value="0">0</option>
+              <option value="10">10</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
           </div>
         </div>
         <div className="w-full flex justify-around items-center">
