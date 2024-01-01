@@ -18,19 +18,19 @@ const Component: FC<Props> = ({ children, time }) => {
 
   return (
     <div
-      className={`h-full rounded-lg px-12 py-2 shadow-md border overflow-y-scroll
-      ${
-        withinTime == 0
-          ? "bg-gray"
-          : withinTime <= 10
-            ? "bg-red"
-            : withinTime <= 30
-              ? "bg-yellow"
-              : withinTime <= 60
-                ? "bg-blue"
-                : "bg-gray"
-      }
-    `}
+      className='h-full rounded-lg px-12 py-2 shadow-md border overflow-y-scroll'
+      style={{
+        backgroundColor:
+          withinTime == 0
+            ? "#F3F4F6"
+            : withinTime <= 10
+              ? "#FEE2E2"
+              : withinTime <= 30
+                ? "#FEF9C3"
+                : withinTime <= 60
+                  ? "#DBEAFE"
+                  : "#F3F4F6"
+      }}
     >
       {children}
     </div>
