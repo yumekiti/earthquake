@@ -10,7 +10,7 @@ type Props = {
 
 const Component: FC<Props> = ({ body }) => {
   return (
-    <li className="mb-4">
+    <li>
       地震情報
       <ul className="list-disc">
         <li>発生日時：{body.earthquake.time}</li>

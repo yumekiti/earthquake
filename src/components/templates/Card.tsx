@@ -18,7 +18,7 @@ const Component: FC<Props> = ({ children, time }) => {
 
   return (
     <div
-      className='h-full rounded-lg px-12 py-2 shadow-md border overflow-y-scroll'
+      className='h-full w-full rounded-lg px-12 py-2 shadow-md overflow-y-scroll'
       style={{
         backgroundColor:
           withinTime == 0
