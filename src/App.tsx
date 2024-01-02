@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-slate">
+    <div className="bg-slate-100">
       <Time />
       <Log />
     </div>
