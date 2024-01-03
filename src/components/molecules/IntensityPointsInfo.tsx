@@ -10,10 +10,7 @@ const Component: FC<Props> = ({ body }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <li
-      className="bg-gray-100 rounded-lg shadow-md p-2 my-2"
-      onClick={() => setIsOpen(!isOpen)}
-    >
+    <li>
       <details className="space-y-2" open={isOpen}>
         <summary>震度観測点の情報</summary>
         {body.points.map((point: any, index: number) => (
