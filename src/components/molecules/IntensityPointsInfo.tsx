@@ -10,11 +10,12 @@ const Component: FC<Props> = ({ body }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <li className="bg-gray-100 rounded-lg shadow-md p-2 my-2" onClick={() => setIsOpen(!isOpen)}>
+    <li
+      className="bg-gray-100 rounded-lg shadow-md p-2 my-2"
+      onClick={() => setIsOpen(!isOpen)}
+    >
       <details className="space-y-2" open={isOpen}>
-        <summary>
-          震度観測点の情報
-        </summary>
+        <summary>震度観測点の情報</summary>
         {body.points.map((point: any, index: number) => (
           <ul key={index} className="list-disc">
             <li>震度観測点名称：{point.addr}</li>
@@ -22,7 +23,10 @@ const Component: FC<Props> = ({ body }) => {
             <li>都道府県：{point.pref}</li>
             <li>
               震度：
-              {scaleData.find((scale: any) => scale.value == point.scale)?.label}
+              {
+                scaleData.find((scale: any) => scale.value == point.scale)
+                  ?.label
+              }
             </li>
           </ul>
         ))}
