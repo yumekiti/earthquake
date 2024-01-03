@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 
 import { scaleData } from "../../constants/scale";
 
@@ -7,11 +7,9 @@ type Props = {
 };
 
 const Component: FC<Props> = ({ body }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <li>
-      <details className="space-y-2" open={isOpen}>
+      <details className="space-y-2">
         <summary>震度観測点の情報</summary>
         {body.points.map((point: any, index: number) => (
           <ul key={index} className="list-disc">
