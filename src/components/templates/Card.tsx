@@ -15,7 +15,7 @@ const Component: FC<Props> = ({ children, time }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date());
-    }, 60000);
+    }, 1000);
 
     return () => {
       clearInterval(interval);
@@ -50,7 +50,6 @@ const Component: FC<Props> = ({ children, time }) => {
     >
       {time && (
         <div className="px-4 py-2 text-xs text-gray-500">
-          {/* 何分前か diff */}
           {Math.floor(diff)}分前
         </div>
       )}
